@@ -1,0 +1,10 @@
+name: Buildcraft-Navigator
+version: 0.01
+author: PhilipGrabow
+
+main: de.philipgrabow.bcn.Main
+
+commands:
+  hub:
+    description: Anzeige des Navigators
+    usage: /<command>
