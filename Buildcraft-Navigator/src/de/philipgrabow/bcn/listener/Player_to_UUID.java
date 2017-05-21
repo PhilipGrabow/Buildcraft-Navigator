@@ -18,6 +18,14 @@ public class Player_to_UUID implements Listener {
 	public void onJoin(PlayerJoinEvent e) {
 		String uid = e.getPlayer().getUniqueId().toString();
 		String name = e.getPlayer().getName();
+		if(!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
 		cfg.set(name + ".UUID", uid);
 		try {

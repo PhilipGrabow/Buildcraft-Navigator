@@ -8,3 +8,4 @@ commands:
   hub:
     description: Anzeige des Navigators
     usage: /<command>
+    aliases: [h, navigator, navi]

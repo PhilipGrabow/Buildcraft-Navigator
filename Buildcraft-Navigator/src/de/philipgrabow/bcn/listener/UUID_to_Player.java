@@ -1,6 +1,7 @@
 package de.philipgrabow.bcn.listener;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -17,6 +18,14 @@ public class UUID_to_Player implements Listener {
 	public void onJoin(PlayerJoinEvent e) {
 		String uid = e.getPlayer().getUniqueId().toString();
 		String name = e.getPlayer().getName();
+		if(!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
 		cfg.set(uid + ".name", name);
 	}
