@@ -5,6 +5,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.philipgrabow.bcn.executor.Hub;
+import de.philipgrabow.bcn.listener.InventoryClickE;
 import de.philipgrabow.bcn.listener.Player_to_UUID;
 import de.philipgrabow.bcn.listener.UUID_to_Player;
 
@@ -28,5 +29,6 @@ public class Main extends JavaPlugin {
 		PluginManager pm = Bukkit.getPluginManager();
 		pm.registerEvents(new Player_to_UUID(), this);
 		pm.registerEvents(new UUID_to_Player(), this);
+		pm.registerEvents(new InventoryClickE(), this);
 	}
 }
